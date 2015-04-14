@@ -1,4 +1,4 @@
-# Marvolous, irc super bot!
+# Marvelous, irc super bot!
 ### Use this project to learn clojure \o/
 
 * [OK] use newest clojure version
