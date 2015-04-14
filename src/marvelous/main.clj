@@ -1,4 +1,4 @@
-(ns marvelous.core
+(ns marvelous.main
   (:require [marvelous.args :refer [parse-args]]
             [marvelous.ircc :refer [start-ircc]]
             [while-let.core :refer [while-let]])

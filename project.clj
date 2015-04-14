@@ -3,4 +3,4 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/tools.cli "0.3.1"]
                  [while-let "0.2.0"]]
-  :main marvelous.core)
+  :main marvelous.main)
