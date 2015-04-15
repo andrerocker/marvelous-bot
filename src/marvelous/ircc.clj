@@ -25,7 +25,7 @@
 
 (defn start-ircc [properties]
   (let [socket (Socket. (:server properties) (:port properties))
-        input (BufferedReader. (InputStreamReader. (.getInputStream socket)))
+        input (clojure.java.io/reader (.getInputStream socket))
         output (PrintWriter. (.getOutputStream socket))]
 
     (println " ~~~~~~~~~~~~~~~~~~ Starting Marvelous IRC Bot :p ~~~~~~~~~~~~~~~\n")
