@@ -19,6 +19,7 @@ A smart and simples irc bot implemented using clojure for fun and a new job
 - [x] regex
 - [ ] tests
 - [ ] ...
+- [ ] travis ci
 - [ ] rewrite all on the clojure way
 
 #### Project Backlog
