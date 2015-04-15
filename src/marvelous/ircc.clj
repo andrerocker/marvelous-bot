@@ -1,5 +1,6 @@
 (ns marvelous.ircc
-  (:require [while-let.core :refer [while-let]])
+  (:require [while-let.core :refer [while-let]]
+            [marvelous.plug :refer [core-plugins]])
   (:import (java.net Socket)
            (java.io InputStreamReader BufferedReader PrintWriter))
   (:gen-class))
@@ -15,19 +16,16 @@
     (send-command output (str "NICK " (:nickname properties)))
     (send-command output (str "JOIN #" (:channel properties))))
 
-(def log { :matcher (fn[line](boolean true)) :handler-fn #(println "<<<" %) })
-(def ping { :matcher #(re-find #"PING" %) :handler-fn #(str "PONG " %) })
-
-(defn- select-plugins [plugins line]
-  (filter #((:matcher %) line) plugins))
+(defn- select-plugins [line]
+  (filter #((:matcher %) line) (core-plugins)))
 
 (defn- execute-plugin [output plugin line]
-  (let [response ((:handler-fn plugin) line)]
-    (if response (send-command output response))))
+  (if-let [response ((:handler-fn plugin) line)]
+    (send-command output response)))
 
 (defn- start-loop [input output properties]
   (while-let [line (.readLine input)]
-    (doseq [current (select-plugins #{log ping} line)]
+    (doseq [current (select-plugins line)]
       (execute-plugin output current line))))
 
 (defn start-ircc [properties]
