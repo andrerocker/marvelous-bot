@@ -13,10 +13,10 @@ A smart and simples irc bot implemented using clojure for fun and a new job
 - [x] Sockets and Streams
 - [x] loops
 - [x] packages/ns
-- [ ] threads and closures
+- [x] threads and closures
 - [ ] seq, lazy-seq and socket-seq :p
 - [ ] reflection and dinamic loading
-- [ ] regex
+- [x] regex
 - [ ] tests
 - [ ] ...
 - [ ] rewrite all on the clojure way
