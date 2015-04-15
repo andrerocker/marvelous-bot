@@ -11,8 +11,9 @@
     (.flush)))
 
 (defn- send-payload [output properties]
+    (send-command output (str "USER " (:nickname properties) " 0 * : " (:nickname properties)))
     (send-command output (str "NICK " (:nickname properties)))
-    (send-command output (str "USER " (:nickname properties) " 0 * : " (:nickname properties))))
+    (send-command output (str "JOIN #" (:channel properties))))
 
 (def log { :matcher (fn[line](boolean true)) :handler-fn #(println "<<<" %) })
 (def ping { :matcher #(re-find #"PING" %) :handler-fn #(str "PONG " %) })
@@ -22,8 +23,7 @@
 
 (defn- execute-plugin [output plugin line]
   (let [response ((:handler-fn plugin) line)]
-    (if response
-      (send-command output response))))
+    (if response (send-command output response))))
 
 (defn- start-loop [input output properties]
   (while-let [line (.readLine input)]

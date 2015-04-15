@@ -12,6 +12,8 @@
     :parse-fn #(Integer/parseInt %)]
    ["-n" "--nickname NICKNAME" "User nickname"
     :default "marvelous-bot"]
+   ["-c" "--channel CHANNEL" "IRC channel"
+    :default "marvelous-development"]
    ["-h", "--help"]])
 
 (defn parse-args [args]
