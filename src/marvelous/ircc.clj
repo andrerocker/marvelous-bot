@@ -12,10 +12,12 @@
     (.flush)))
 
 (defn- send-payload [output properties]
-  (doto output
-    (send-command (str "USER " (:nickname properties) " 0 * : " (:nickname properties)))
-    (send-command (str "NICK " (:nickname properties)))
-    (send-command (str "JOIN #" (:channel properties)))))
+  (let [channel (:channel properties)
+        nickname (:nickname properties)]
+    (doto output
+      (send-command (str "USER " nickname " 0 * : " nickname))
+      (send-command (str "NICK " nickname))
+      (send-command (str "JOIN #" channel)))))
 
 (defn- select-plugins [line]
   (filter #((:matcher %) line) (core-plugins)))
