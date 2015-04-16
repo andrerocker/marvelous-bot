@@ -1,12 +1,10 @@
 (ns marvelous.args
   (:require [clojure.tools.cli :refer [parse-opts]])
-  (:import (java.net InetAddress))
   (:gen-class))
 
 (def commandline-options
   [["-s" "--server SERVER" "IRC server"
-    :default (InetAddress/getByName "irc.freenode.net")
-    :parse-fn #(InetAddress/getByName %)]
+    :default "irc.freenode.net"]
    ["-p" "--port PORT" "IRC server port"
     :default 6667
     :parse-fn #(Integer/parseInt %)]
