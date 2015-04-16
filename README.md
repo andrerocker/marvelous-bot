@@ -1,4 +1,5 @@
 # Marvelous, a clojure irc super bot!
+![Travis:Master](https://travis-ci.org/andrerocker/marvelous-bot.svg?branch=master "Travis Master")
 
 A smart and simples irc bot implemented using clojure for fun and a new job
 
@@ -17,13 +18,13 @@ A smart and simples irc bot implemented using clojure for fun and a new job
 - [ ] seq, lazy-seq and socket-seq :p
 - [ ] reflection and dinamic loading
 - [x] regex
-- [ ] tests
+- [x] tests
 - [ ] ...
-- [ ] travis ci
+- [x] travis ci
 - [ ] rewrite all on the clojure way
 
 #### Project Backlog
 
-- [ ] all commands as a registered plugin
+- [x] all commands as a registered plugin
 - [ ] better readme
 - [ ] uberjar and distribution

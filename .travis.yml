@@ -1,0 +1,13 @@
+language: clojure
+script: lein test
+notifications:
+  irc: "irc.freenode.org#marvelous-development"
+jdk:
+  - openjdk6
+  - openjdk7
+  - oraclejdk7
+  - oraclejdk8
+matrix:
+  allow_failures:
+    - oraclejdk7
+    - oraclejdk8
