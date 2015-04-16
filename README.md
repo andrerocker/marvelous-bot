@@ -21,6 +21,7 @@ https://github.com/andrerocker/marvelous-bot
 - [ ] reflection and dinamic loading
 - [x] regex
 - [x] tests
+- [ ] error handling
 - [ ] ...
 - [x] travis ci
 - [ ] rewrite all on the clojure way
