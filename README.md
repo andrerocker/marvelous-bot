@@ -3,6 +3,8 @@
 
 A smart and simples irc bot implemented using clojure for fun and a new job
 
+https://github.com/andrerocker/marvelous-bot
+
 #### Clojure Adventure
 
 - [x] use newest clojure version
