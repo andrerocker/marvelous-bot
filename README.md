@@ -31,3 +31,11 @@ https://github.com/andrerocker/marvelous-bot
 - [x] all commands as a registered plugin
 - [ ] better readme
 - [ ] uberjar and distribution
+
+#### Plugins
+
+- [x] log
+- [x] ping
+- [ ] hello
+- [ ] edbot
+- [ ] mustache
