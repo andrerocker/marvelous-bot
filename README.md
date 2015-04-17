@@ -3,6 +3,8 @@
 
 A smart and simples irc bot implemented using clojure for fun and a new job
 
+https://github.com/andrerocker/marvelous-bot
+
 #### Clojure Adventure
 
 - [x] use newest clojure version
@@ -19,6 +21,7 @@ A smart and simples irc bot implemented using clojure for fun and a new job
 - [ ] reflection and dinamic loading
 - [x] regex
 - [x] tests
+- [ ] error handling
 - [ ] ...
 - [x] travis ci
 - [ ] rewrite all on the clojure way
@@ -28,3 +31,11 @@ A smart and simples irc bot implemented using clojure for fun and a new job
 - [x] all commands as a registered plugin
 - [ ] better readme
 - [ ] uberjar and distribution
+
+#### Plugins
+
+- [x] log
+- [x] ping
+- [ ] hello
+- [ ] edbot
+- [ ] mustache
