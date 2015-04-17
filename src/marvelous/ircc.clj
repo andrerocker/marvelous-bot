@@ -14,11 +14,11 @@
 
 (defn- send-payload [output properties]
   (let [channel (:channel properties)
-        nickname (:nickname properties)]
-    (doto output
-      (send-command (str "USER " nickname " 0 * : " nickname))
-      (send-command (str "NICK " nickname))
-      (send-command (str "JOIN #" channel)))))
+        nickname (:nickname properties)
+        send-send #(send-command output %)]
+    (mapv send-send [(str "USER " nickname " 0 * : " nickname)
+                     (str "NICK " nickname)
+                     (str "JOIN #" channel)])))
 
 (defn- select-plugins [line]
   (filter #((:matcher %) line) (core-plugins)))
