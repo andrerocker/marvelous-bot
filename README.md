@@ -22,6 +22,8 @@ https://github.com/andrerocker/marvelous-bot
 - [x] regex
 - [x] tests
 - [ ] error handling
+- [ ] logger
+- [ ] async and channels :p
 - [ ] ...
 - [x] travis ci
 - [ ] rewrite all on the clojure way
