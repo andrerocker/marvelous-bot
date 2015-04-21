@@ -38,6 +38,6 @@ https://github.com/andrerocker/marvelous-bot
 
 - [x] log
 - [x] ping
-- [ ] hello
+- [x] hello
 - [ ] edbot
 - [ ] mustache

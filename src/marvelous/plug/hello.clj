@@ -1,9 +1,9 @@
 (ns marvelous.plug.hello
+  (:require [marvelous.plug.helper :refer [extract-chan-message, send-chan-user-message]])
   (:gen-class))
 
 (defn- hello-handler-fn [line]
-  (let [[_ sender _ channel _] (re-matches #":(.*)!(.*)PRIVMSG #(.*) :(.*)" line)]
-    (if sender
-      (str "PRIVMSG #" channel " :" sender ": iae tru!" ))))
+  (let [props (extract-chan-message line)]
+    (send-chan-user-message props "iae tru")))
 
 (def hello-user { :matcher #(re-find #"hello" %) :handler-fn hello-handler-fn })
