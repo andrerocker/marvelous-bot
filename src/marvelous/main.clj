@@ -1,7 +1,7 @@
 (ns marvelous.main
   (:require [marvelous.args :refer [parse-args]]
             [marvelous.ircc :refer [start-ircc]]
-            [marvelous.plug :refer [hello-user]])
+            [marvelous.plug.hello :refer [hello-user]])
   (:gen-class))
 
 (def user-plugins [hello-user])
