@@ -12,6 +12,8 @@
     :default "marvelous-bot"]
    ["-c" "--channel CHANNEL" "IRC channel"
     :default "marvelous-development"]
+   ["-b" "--banner BANNER" "Marvelous Start Banner :p"
+    :default "~~~~~~~~~~~~~~~~~~~~~ Starting Marvelous IRC Bot ~~~~~~~~~~~~~~~~~~~~~" ]
    ["-h", "--help"]])
 
 (defn parse-args [args]
