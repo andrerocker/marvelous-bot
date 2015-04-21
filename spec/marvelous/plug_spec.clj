@@ -4,8 +4,7 @@
 
 (describe "#core-plugins"
   (it "return core plugins"
-      (let [plugins (core-plugins)]
-        (should= [log ping] plugins))))
+    (should= [log ping] core-plugins)))
 
 (describe "#log"
   (it "match all lines"

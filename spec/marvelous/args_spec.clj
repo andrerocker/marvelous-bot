@@ -8,16 +8,19 @@
         (should= 6667 (:port props))
         (should= "marvelous-bot" (:nickname props))
         (should= "irc.freenode.net" (:server props))
-        (should= "marvelous-development" (:channel props))))
+        (should= "marvelous-development" (:channel props))
+        (should-not-be-nil (:banner props))))
 
   (it "can populate specified values"
       (let [props (parse-args ["-s" "irc.baconetwork.net"
                                "-p" "1337"
                                "-n" "baconz"
-                               "-c" "deathstar"])]
+                               "-c" "deathstar"
+                               "-b" "yeahh"])]
         (should= 1337 (:port props))
         (should= "baconz" (:nickname props))
         (should= "deathstar" (:channel props))
-        (should= "irc.baconetwork.net" (:server props)))))
+        (should= "irc.baconetwork.net" (:server props))
+        (should= "yeahh" (:banner props)))))
 
 (run-specs)

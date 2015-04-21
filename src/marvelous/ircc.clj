@@ -20,24 +20,25 @@
                      (str "NICK " nickname)
                      (str "JOIN #" channel)])))
 
-(defn- select-plugins [line]
-  (filter #((:matcher %) line) (core-plugins)))
+(defn- select-plugins [plugins line]
+  (filter #((:matcher %) line) plugins))
 
 (defn- execute-plugin [output plugin line]
   (if-let [response ((:handler-fn plugin) line)]
     (send-command output response)))
 
-(defn- start-loop [executor input output properties]
+(defn- start-loop [executor input output properties user-plugins]
   (while-let [line (.readLine input)]
-    (doseq [current (select-plugins line)]
-      (.submit executor #(execute-plugin output current line)))))
+    (let [plugins (concat core-plugins user-plugins)]
+      (doseq [current (select-plugins plugins line)]
+        (.submit executor #(execute-plugin output current line))))))
 
-(defn start-ircc [properties]
-  (println " ~~~~~~~~~~~~~~~~~~ Starting Marvelous IRC Bot :p ~~~~~~~~~~~~~~~\n")
+(defn start-ircc [properties user-plugins]
+  (println (:banner properties) "\n")
   (let [socket (Socket. (:server properties) (:port properties))
         input (clojure.java.io/reader (.getInputStream socket))
         output (PrintWriter. (.getOutputStream socket))
         executor (Executors/newCachedThreadPool)]
 
     (send-payload output properties)
-    (start-loop executor input output properties)))
+    (start-loop executor input output properties user-plugins)))
