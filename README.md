@@ -1,7 +1,7 @@
 # Marvelous, a clojure irc super bot!
 ![Travis:Master](https://travis-ci.org/andrerocker/marvelous-bot.svg?branch=master "Travis Master")
 
-A smart and simples irc bot implemented using clojure for fun and a new job
+A smart and simple irc bot implemented using clojure
 
 https://github.com/andrerocker/marvelous-bot
 
